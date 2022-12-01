@@ -1,0 +1,13 @@
+services:
+  snarkos-client:
+    image: aleohq/snarkos:latest-amd
+    restart: always
+    environment:
+      - ALEOKEY:APrivateKey1zkp2rNR6c3Vvr9jzNmdkvEhFPSgk7J98CN235p7SpqXtqAc
+      - PROVER:APrivateKey1zkp2rNR6c3Vvr9jzNmdkvEhFPSgk7J98CN235p7SpqXtqAc
+    command: /aleo/bin/snarkos start --nodisplay --prover xxxxxxxx
+    ports:
+      - 4133:4133
+      - 3033:3033
+    volumes:
+      - ./data:/aleo/data
